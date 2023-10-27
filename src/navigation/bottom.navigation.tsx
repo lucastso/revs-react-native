@@ -1,4 +1,7 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
+import ProfileStackNavigation from './profile.navigation'
+import { Ionicons } from '@expo/vector-icons'
+import HomeStackNavigation from './home.navigation'
 
 const BottomTabsNavigation = () => {
   const BottomTab = createBottomTabNavigator()
@@ -18,54 +21,30 @@ const BottomTabsNavigation = () => {
         },
       }}
     >
-      {/* <BottomTab.Screen
-          name="Relatorio"
-          component={RelatorioStackNavigation}
-          options={{
-            tabBarActiveTintColor: '#000',
-            tabBarInactiveTintColor: '#CCC',
-            tabBarLabel: 'Relatorio',
-            tabBarIcon: ({ color }) => (
-              <Ionicons name="clipboard-outline" color={color} size={20} />
-            ),
-          }}
-        />
-        <BottomTab.Screen
-          name="Carteiras"
-          component={CarteiraStackNavigation}
-          options={{
-            tabBarActiveTintColor: '#000',
-            tabBarInactiveTintColor: '#CCC',
-            tabBarLabel: 'Carteiras',
-            tabBarIcon: ({ color }) => (
-              <Ionicons name="wallet-outline" color={color} size={20} />
-            ),
-          }}
-        />
-        <BottomTab.Screen
-          name="Categorias"
-          component={CategoriaStackNavigation}
-          options={{
-            tabBarActiveTintColor: '#000',
-            tabBarInactiveTintColor: '#CCC',
-            tabBarLabel: 'Categorias',
-            tabBarIcon: ({ color }) => (
-              <Ionicons name="create-outline" color={color} size={20} />
-            ),
-          }}
-        />
-        <BottomTab.Screen
-          name="Perfil"
-          component={PerfilStackNavigation}
-          options={{
-            tabBarActiveTintColor: '#000',
-            tabBarInactiveTintColor: '#CCC',
-            tabBarLabel: 'Perfil',
-            tabBarIcon: ({ color }) => (
-              <Ionicons name="person-outline" color={color} size={20} />
-            ),
-          }}
-        /> */}
+      <BottomTab.Screen
+        name="Home"
+        component={HomeStackNavigation}
+        options={{
+          tabBarActiveTintColor: '#000',
+          tabBarInactiveTintColor: '#CCC',
+          tabBarLabel: 'Início',
+          tabBarIcon: ({ color }) => (
+            <Ionicons name="person-outline" color={color} size={20} />
+          ),
+        }}
+      />
+      <BottomTab.Screen
+        name="Profile"
+        component={ProfileStackNavigation}
+        options={{
+          tabBarActiveTintColor: '#000',
+          tabBarInactiveTintColor: '#CCC',
+          tabBarLabel: 'Perfil',
+          tabBarIcon: ({ color }) => (
+            <Ionicons name="person-outline" color={color} size={20} />
+          ),
+        }}
+      />
     </BottomTab.Navigator>
   )
 }
